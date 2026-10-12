@@ -1,4 +1,5 @@
 *.sfc
+!mutant-mix.sfc
 *.sym
 *.obj
 *.ps

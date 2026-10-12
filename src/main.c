@@ -21,10 +21,10 @@ extern const unsigned char level1_col[2048];
 #define HIT_H 36
 #define WORLD_W 512
 #define GROUND_Y 192
-#define HERO_TILES 64
-#define HERO_BYTES 2048
-#define RAT_TILE 256
-#define RAT_BYTES 512
+#define HERO_TILES 128
+#define HERO_BYTES 4096
+#define RAT_TILE 512
+#define RAT_BYTES 2048
 
 #define COL_SOLID 1
 #define COL_HURT 2
@@ -240,13 +240,13 @@ void load_graphics(void)
 {
     u16 n;
     consoleSetTextVramBGAdr(0x6800);
-    consoleSetTextVramAdr(0x3000);
-    consoleSetTextOffset(0x0100);
+    consoleSetTextVramAdr(0x5000);
+    consoleSetTextOffset(0);
     consoleInitText(0, 16 * 2, &snesfont, &snespal);
 
-    bgInitTileSet(1, &level1pic, &level1pal, 0, (&level1pic_end - &level1pic), 16 * 2, BG_16COLORS, 0x4000);
-    bgInitMapSet(1, &level1map, (&level1map_end - &level1map), SC_64x32, 0x5000);
-    bgSetGfxPtr(0, 0x2000);
+    bgInitTileSet(1, &level1pic, &level1pal, 0, (&level1pic_end - &level1pic), 16 * 2, BG_16COLORS, 0x6000);
+    bgInitMapSet(1, &level1map, (&level1map_end - &level1map), SC_64x32, 0x7000);
+    bgSetGfxPtr(0, 0x5000);
     bgSetMapPtr(0, 0x6800, SC_32x32);
 
     n = HERO_BYTES;

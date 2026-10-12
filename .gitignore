@@ -1,0 +1,14 @@
+*.sfc
+!mutant-mix.sfc
+*.sym
+*.obj
+*.ps
+*.asm
+!src/data.asm
+!hdr.asm
+linkfile
+gfx/*.pic
+gfx/*.pal
+gfx/*.map
+gfx/.stamp
+src/level1_col.c
